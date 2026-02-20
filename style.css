@@ -38,12 +38,28 @@ body{
 .wrapper .form-box.login{
     left: 0;
     padding: 0 60px 0 40px;
-    display: none;
+    /* display: none; */
+}
+
+.wrapper .form-box.login .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+}
+
+
+.wrapper.active .form-box.login .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--i));
 }
 
 .wrapper .form-box.register{
     right: 0;
     padding: 0 40px 0 60px;
+    display: none;
 }
 .form-box h2{
     font-size: 30px;
@@ -173,8 +189,15 @@ input-box input:focus,
     right: 0;
     text-align: right;
     padding: 0 40px 60px 100px;
-    display: none;
+    /* display: none; */
 
+}
+
+.wrapper .info-text.register{
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 40px;
+    display: none;
 }
 
 .info-text h2{
@@ -199,8 +222,8 @@ input-box input:focus,
     height: 600px;
     background: linear-gradient(45deg, #081b29, #0ef);
     border-bottom: 3px solid #0ef;
-    /* transform: rotate(10deg) skewY(40deg); */
-    transform: rotate(0) skewY(0);
+    transform: rotate(10deg) skewY(40deg);
+    /* transform: rotate(0) skewY(0); */
     transform-origin: bottom right;
 }
 .wrapper .bg-animate2{
@@ -211,7 +234,8 @@ input-box input:focus,
     height: 700px;
     background: #081b29;
     border-top: 3px solid #0ef;
-    transform: rotate(-11deg) skewY(-40deg);
+    /* transform: rotate(-11deg) skewY(-40deg); */
+    transform: rotate(0) skewY(0);
     /* transform: rotate(0) skewY(0); */
     transform-origin: bottom left;
 }
