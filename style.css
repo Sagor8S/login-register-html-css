@@ -46,6 +46,7 @@ body{
     opacity: 1;
     filter: blur(0);
     transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
 }
 
 
@@ -59,8 +60,30 @@ body{
 .wrapper .form-box.register{
     right: 0;
     padding: 0 40px 0 60px;
-    display: none;
+    /* display: none; */
+    pointer-events: none;
+    pointer-events: none;
 }
+
+.wrapper.active .form-box.register{
+    pointer-events: auto;
+}
+
+.wrapper .form-box.register .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .form-box.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+
 .form-box h2{
     font-size: 30px;
     color: #fff;
@@ -193,11 +216,50 @@ input-box input:focus,
 
 }
 
+
+.wrapper .info-text.login .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+
+}
+
+
+.wrapper.active .info-text.login .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--i));
+}
+
 .wrapper .info-text.register{
     left: 0;
     text-align: left;
     padding: 0 150px 60px 40px;
-    display: none;
+    /* display: none; */
+    pointer-events: none;
+}
+
+.wrapper.active .info-text.register{
+    pointer-events: auto;
+}
+
+.wrapper .info-text.register .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .info-text.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+
 }
 
 .info-text h2{
@@ -223,9 +285,16 @@ input-box input:focus,
     background: linear-gradient(45deg, #081b29, #0ef);
     border-bottom: 3px solid #0ef;
     transform: rotate(10deg) skewY(40deg);
-    /* transform: rotate(0) skewY(0); */
     transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
 }
+
+.wrapper.active .bg-animate{
+    transform: rotate(0) skewY(0);
+    transition-delay: .5s;
+}
+
 .wrapper .bg-animate2{
     position: absolute;
     top: 100%;
@@ -234,8 +303,15 @@ input-box input:focus,
     height: 700px;
     background: #081b29;
     border-top: 3px solid #0ef;
-    /* transform: rotate(-11deg) skewY(-40deg); */
     transform: rotate(0) skewY(0);
-    /* transform: rotate(0) skewY(0); */
+    transform: rotate(0) skewY(0);
     transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: .5s;
+}
+
+
+.wrapper.active .bg-animate2{
+   transform: rotate(-11deg) skewY(-40deg);
+   transition-delay: 1.2s;
 }
